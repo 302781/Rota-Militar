@@ -7,7 +7,7 @@ declare global {
     }
 }
 
-class AppManager {
+export class AppManager {
     private currentScreenId: string = '';
     private screens: Map<string, HTMLElement> = new Map();
 
@@ -61,7 +61,24 @@ class AppManager {
     }
 }
 
-// Inicializa o gerenciador de app assim que o DOM estiver pronto
+// Inicializa o AppManager e o expõe globalmente para uso no HTML (se necessário)
 document.addEventListener('DOMContentLoaded', () => {
-    window.app = new AppManager();
+    const appInstance = new AppManager();
+    window.app = appInstance; // Mantém a referência global para onclicks no HTML
+    // A primeira tela a ser mostrada será gerada e mostrada aqui
+    appInstance.showScreen('welcome-screen', generateWelcomeScreenHTML()); // Chama a função para gerar HTML
 });
+
+// Movendo a função de geração da welcome screen para cá, ou para um utilitário
+function generateWelcomeScreenHTML(): string {
+    return `
+        <div class="screen-header">
+            <img src="assets/icons/military-badge.svg" alt="Emblema Militar" class="header-icon">
+            <h1>Bem-vindo ao Comando da Sua Rotina!</h1>
+        </div>
+        <div class="screen-content">
+            <p>Prepare-se para transformar disciplina em desempenho. Para começarmos, precisamos saber um pouco mais sobre você e seus objetivos.</p>
+            <button class="btn btn-primary" onclick="window.app.showScreen('profile-setup')">Iniciar Personalização</button>
+        </div>
+    `;
+}

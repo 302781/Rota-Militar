@@ -1,7 +1,18 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+  "compilerOptions": {
+    "target": "es2017",            // Versão do JavaScript de destino
+    "module": "es6",              // Usar Módulos ES para importações/exportações
+    "outDir": "./scripts",        // Saída de arquivos JS compilados para ./scripts
+    "strict": true,               // Habilitar todas as opções de verificação de tipo rigorosas
+    "esModuleInterop": true,      // Habilita compatibilidade para importações padrão com módulos não-ES
+    "skipLibCheck": true,         // Pular verificação de tipo de arquivos de declaração
+    "forceConsistentCasingInFileNames": true, // Não permitir nomes de arquivo com maiúsculas/minúsculas inconsistentes
+    "declaration": false          // Não gerar arquivos .d.ts (opcional, dependendo da necessidade)
+  },
+  "include": [
+    "scripts/**/*.ts"             // Incluir todos os arquivos .ts na pasta scripts e suas subpastas
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
