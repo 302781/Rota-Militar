@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotina Militar</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div id="app-container">
+        <div id="welcome-screen" class="app-screen active">
+            <div class="screen-header">
+                <img src="assets/icons/military-badge.svg" alt="Emblema Militar" class="header-icon">
+                <h1>Bem-vindo ao Comando da Sua Rotina!</h1>
+            </div>
+            <div class="screen-content">
+                <p>Prepare-se para transformar disciplina em desempenho. Para começarmos, precisamos saber um pouco mais sobre você e seus objetivos.</p>
+                <button class="btn btn-primary" onclick="window.app.showScreen('profile-setup')">Iniciar Personalização</button>
+            </div>
+        </div>
+
+        <div id="profile-setup" class="app-screen"></div>
+        <div id="fitness-level" class="app-screen"></div>
+        <div id="main-dashboard" class="app-screen"></div>
+        <div id="tfm-screen" class="app-screen"></div>
+        <div id="routines-screen" class="app-screen"></div>
+        <div id="skills-screen" class="app-screen"></div>
+        <div id="subscriptions-screen" class="app-screen"></div>
+
+        <div id="sargento-welcome-screen" class="app-screen welcome-carousel"></div>
+        <div id="soldado-welcome-screen" class="app-screen welcome-carousel"></div>
+        <div id="recruta-welcome-screen" class="app-screen welcome-carousel"></div>
+        <div id="tenente-welcome-screen" class="app-screen welcome-carousel"></div>
+
+    </div>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/onboarding.js"></script>
+    </body>
+</html>
