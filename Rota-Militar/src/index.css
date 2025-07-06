@@ -1,0 +1,97 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 82 45% 17%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 60 100% 35%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 82 45% 17%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 210 11% 15%;
+    --foreground: 0 0% 98%;
+
+    --card: 45 15% 25%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 45 15% 25%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 82 45% 17%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 60 100% 35%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .military-gradient {
+    background: linear-gradient(135deg, hsl(82 45% 17%) 0%, hsl(45 15% 25%) 100%);
+  }
+  
+  .military-card {
+    @apply bg-card border border-border rounded-lg shadow-lg backdrop-blur-sm;
+  }
+  
+  .military-button {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105;
+  }
+  
+  .military-button-secondary {
+    @apply bg-secondary hover:bg-secondary/80 text-secondary-foreground border border-border font-medium py-2 px-4 rounded-lg transition-all duration-200;
+  }
+}
